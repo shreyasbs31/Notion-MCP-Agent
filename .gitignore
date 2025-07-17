@@ -6,3 +6,4 @@ __pycache__/
 agent.log
 page_cache.json
 .vscode/
+.DS_Store

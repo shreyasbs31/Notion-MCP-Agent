@@ -15,9 +15,9 @@ NOTION_MCP_HEADERS = json.dumps(
 )
 
 root_agent = Agent(
-    name="notion_agent",
-    model="gemini-2.0-flash",
-    instruction="""
+    name = "notion_agent",
+    model = "gemini-2.0-flash",
+    instruction = """
     You are a helpful assistant that can help with a variety of tasks using Notion.
 
     Rules:
@@ -30,12 +30,12 @@ root_agent = Agent(
     - If you are unsure, make a best effort guess based on available context before asking the user.
     - Make sure you return information in an easy to read format.
     """,
-    tools=[
+    tools = [
         MCPToolset(
-            connection_params=StdioServerParameters(
-                command="npx",
-                args=["-y", "@notionhq/notion-mcp-server"],
-                env={"OPENAPI_MCP_HEADERS": NOTION_MCP_HEADERS},
+            connection_params = StdioServerParameters(
+                command = "npx",
+                args = ["-y", "@notionhq/notion-mcp-server"],
+                env = {"OPENAPI_MCP_HEADERS": NOTION_MCP_HEADERS},
             )
         ),
     ],
